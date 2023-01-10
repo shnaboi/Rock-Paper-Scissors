@@ -1,7 +1,5 @@
 // document.addEventListener('DOMContentLoaded', () => {
 
-    let player;
-
     function getComputerChoice() {
         let number = Math.floor(Math.random() * 3 + 1);
         if (number == 1) {
@@ -13,17 +11,6 @@
         }
     }
 
-    function playRound(player, computer) {
-        
-        getComputerChoice();
-
-    }
-
-    function game() {
-
-        playRound();
-    }
-
     function getPlayerChoice() {
         let input = prompt('Rock, Paper, Scissors. Type in "R", "P", or "S" to play');
         if (input.toLowerCase() == "r") {
@@ -33,7 +20,20 @@
         } else if (input.toLowerCase() == "s") {
             player = "scissors"
         }
-        console.log(player)
+        return player;
     }
 
-    getPlayerChoice();
+    function playRound(player, computer) {
+        player = getPlayerChoice();
+        computer = getComputerChoice();
+        result = `${player} + ${computer}`;
+        console.log(result);
+    }
+
+    // function game() {
+
+    //     playRound();
+    
+    // }
+
+    playRound();
