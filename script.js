@@ -20,8 +20,12 @@
             player = "rock";
         } if (input.toLowerCase() == "p") {
             player = "paper";
-        } else if (input.toLowerCase() == "s") {
+        } if (input.toLowerCase() == "s") {
             player = "scissors"
+        } else if (input.toLowerCase() !== "r" && 
+                   input.toLowerCase() !== "p" && 
+                   input.toLowerCase() !== "s") {
+                getPlayerChoice();
         }
         return player;
 
