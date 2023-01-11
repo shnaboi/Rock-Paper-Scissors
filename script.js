@@ -51,7 +51,7 @@
         const player = getPlayerChoice();
         const computer = getComputerChoice();
         playRound(player, computer);
-        while (playerWins < 5 || computerWins < 5) {
+        while (playerWins < 5 && computerWins < 5) {
             game();
         }
     }
