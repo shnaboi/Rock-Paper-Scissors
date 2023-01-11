@@ -1,5 +1,7 @@
 // document.addEventListener('DOMContentLoaded', () => {
 
+    let playerWins = 0;
+    let computerWins = 0;
 
     function getComputerChoice() {
         let number = Math.floor(Math.random() * 3 + 1);
@@ -22,6 +24,7 @@
             player = "scissors"
         }
         return player;
+
     }
 
     function playRound(playerC, computerC) {
@@ -34,9 +37,13 @@
             playerC == "scissors" && computerC == "paper") {
             result =  'Win';
             console.log('Win');
+            playerWins++;
+            console.log(playerWins);
         } else {
             result = 'L';
             console.log('L');
+            computerWins++;
+            console.log(computerWins);
         }
     }
 
@@ -44,7 +51,9 @@
         const player = getPlayerChoice();
         const computer = getComputerChoice();
         playRound(player, computer);
-    
+        while (playerWins < 5 || computerWins < 5) {
+            game();
+        }
     }
 
     game();
