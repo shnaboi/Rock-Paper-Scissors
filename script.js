@@ -1,5 +1,6 @@
 // document.addEventListener('DOMContentLoaded', () => {
 
+
     function getComputerChoice() {
         let number = Math.floor(Math.random() * 3 + 1);
         if (number == 1) {
@@ -23,17 +24,27 @@
         return player;
     }
 
-    function playRound(player, computer) {
-        player = getPlayerChoice();
-        computer = getComputerChoice();
-        result = `${player} + ${computer}`;
-        console.log(result);
+    function playRound(playerC, computerC) {
+        if (playerC === computerC) {
+            result = 'Tie';
+            console.log('Tie');
+        } else if (
+            playerC == "rock" && computerC == "scissors" || 
+            playerC == "paper" && computerC == "rock" || 
+            playerC == "scissors" && computerC == "paper") {
+            result =  'Win';
+            console.log('Win');
+        } else {
+            result = 'L';
+            console.log('L');
+        }
     }
 
-    // function game() {
-
-    //     playRound();
+    function game() {
+        const player = getPlayerChoice();
+        const computer = getComputerChoice();
+        playRound(player, computer);
     
-    // }
+    }
 
-    playRound();
+    game();
