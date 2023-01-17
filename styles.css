@@ -1,0 +1,31 @@
+body {
+    font-family: 'Courier New', Courier, monospace;
+    background-color: gainsboro;
+}
+
+.heading {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.title {
+    text-align: center;
+}
+
+.game-section {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+button {
+    border: 1px solid red;
+    font-size: 48px;
+}
+
+.score-section {
+    position: relative;
+    bottom: -48px;
+    height: 256px;
+    background-color: brown;
+}

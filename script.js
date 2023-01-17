@@ -60,7 +60,7 @@
         }
     }
 
-    game();
+    // game();
 
     // add round counter
     // add tie counter
