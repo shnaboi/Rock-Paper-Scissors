@@ -61,3 +61,9 @@
     }
 
     game();
+
+    // add round counter
+    // add tie counter
+    // add alerts for if you lost or won
+    // add streak counters (for if you lose, tie, or win 3+ in a row)
+    // add a way to play again if you win or lose 5
