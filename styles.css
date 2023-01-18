@@ -24,8 +24,28 @@ button {
 }
 
 .score-section {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
     position: relative;
     bottom: -48px;
     height: 256px;
-    background-color: brown;
+}
+
+.score-user {
+    border: 2px solid red;
+    height: 100%;
+    width: 35%;
+}
+
+.killfeed {
+    border: 2px solid red;
+    height: 100%;
+    width: 25%;
+}
+
+.score-pc {
+    border: 2px solid red;
+    height: 100%;
+    width: 35%;
 }

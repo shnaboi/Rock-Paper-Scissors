@@ -2,6 +2,26 @@
 
     let playerWins = 0;
     let computerWins = 0;
+    let playerInput = '';
+    console.log(playerInput);
+
+    let userRock = document.getElementById("rock");
+    let userPaper = document.getElementById("paper");
+    let userScissors = document.getElementById("scissors");
+
+    let inputRock = userRock.addEventListener('click', function() {
+        playerInput = 'rock';
+        console.log(playerInput)
+    });
+
+    let inputPaper = userPaper.addEventListener('click', function() {
+        playerInput =  'paper';
+        console.log(playerInput)
+    });
+    let inputScissors = userScissors.addEventListener('click', function() {
+        playerInput = 'scissors';
+        console.log(playerInput)
+    });
 
     function getComputerChoice() {
         let number = Math.floor(Math.random() * 3 + 1);
@@ -15,19 +35,23 @@
     }
 
     function getPlayerChoice() {
-        let input = prompt('Rock, Paper, Scissors. Type in "R", "P", or "S" to play');
-        if (input.toLowerCase() == "r") {
-            player = "rock";
-        } if (input.toLowerCase() == "p") {
-            player = "paper";
-        } if (input.toLowerCase() == "s") {
-            player = "scissors"
-        } else if (input.toLowerCase() !== "r" && 
-                   input.toLowerCase() !== "p" && 
-                   input.toLowerCase() !== "s") {
-                getPlayerChoice();
+        if (playerInput !== '') {
+            return playerInput;
         }
-        return player;
+
+        
+        // if (input.toLowerCase() == "r") {
+        //     player = "rock";
+        // } if (input.toLowerCase() == "p") {
+        //     player = "paper";
+        // } if (input.toLowerCase() == "s") {
+        //     player = "scissors"
+        // } else if (input.toLowerCase() !== "r" && 
+        //            input.toLowerCase() !== "p" && 
+        //            input.toLowerCase() !== "s") {
+        //         getPlayerChoice();
+        // }
+        // return player;
 
     }
 
@@ -60,7 +84,7 @@
         }
     }
 
-    // game();
+    game();
 
     // add round counter
     // add tie counter
