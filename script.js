@@ -2,56 +2,19 @@
 
     let playerWins = 0;
     let computerWins = 0;
-    let playerInput = '';
-    console.log(playerInput);
 
     let userRock = document.getElementById("rock");
     let userPaper = document.getElementById("paper");
     let userScissors = document.getElementById("scissors");
 
-    let inputRock = userRock.addEventListener('click', function() {
-        playerInput = 'rock';
-        console.log(playerInput)
-    });
+    userRock.addEventListener('click', () => getPlayerChoice('rock'));
+    userPaper.addEventListener('click', () => getPlayerChoice('paper'));
+    userScissors.addEventListener('click', () => getPlayerChoice('scissors'));
 
-    let inputPaper = userPaper.addEventListener('click', function() {
-        playerInput =  'paper';
-        console.log(playerInput)
-    });
-    let inputScissors = userScissors.addEventListener('click', function() {
-        playerInput = 'scissors';
-        console.log(playerInput)
-    });
+    function getPlayerChoice(playerC) {
 
-    function getComputerChoice() {
-        let number = Math.floor(Math.random() * 3 + 1);
-        if (number == 1) {
-            return 'rock';
-        } if (number == 2) {
-            return 'paper'
-        } else if (number == 3) {
-            return 'scissors'
-        }
-    }
-
-    function getPlayerChoice() {
-        if (playerInput !== '') {
-            return playerInput;
-        }
-
-        
-        // if (input.toLowerCase() == "r") {
-        //     player = "rock";
-        // } if (input.toLowerCase() == "p") {
-        //     player = "paper";
-        // } if (input.toLowerCase() == "s") {
-        //     player = "scissors"
-        // } else if (input.toLowerCase() !== "r" && 
-        //            input.toLowerCase() !== "p" && 
-        //            input.toLowerCase() !== "s") {
-        //         getPlayerChoice();
-        // }
-        // return player;
+        const computerC = getComputerChoice();
+        playRound(playerC, computerC)
 
     }
 
@@ -75,16 +38,20 @@
         }
     }
 
-    function game() {
-        const player = getPlayerChoice();
-        const computer = getComputerChoice();
-        playRound(player, computer);
-        while (playerWins < 5 && computerWins < 5) {
-            game();
+    function getComputerChoice() {
+        let number = Math.floor(Math.random() * 3 + 1);
+        if (number == 1) {
+            return 'rock';
+        } if (number == 2) {
+            return 'paper'
+        } else if (number == 3) {
+            return 'scissors'
         }
     }
 
-    game();
+    function game() {
+        
+    }
 
     // add round counter
     // add tie counter
