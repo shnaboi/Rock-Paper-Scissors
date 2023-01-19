@@ -2,6 +2,8 @@
 
     let playerWins = 0;
     let playerLoss = 0;
+    let roundResult = '';
+    let computerChoice = '';
 
     let userRock = document.getElementById("rock");
     let userPaper = document.getElementById("paper");
@@ -9,6 +11,8 @@
 
     const winCounter = document.getElementById('Wins');
     const lossCounter = document.getElementById('Loss');
+    const winLoseTag = document.getElementById('winLoseTag');
+    const computerChose = document.getElementById('computerChose');
 
     userRock.addEventListener('click', () => getPlayerChoice('rock'));
     userPaper.addEventListener('click', () => getPlayerChoice('paper'));
@@ -29,34 +33,41 @@
             playerC == "rock" && computerC == "scissors" || 
             playerC == "paper" && computerC == "rock" || 
             playerC == "scissors" && computerC == "paper") {
-            result =  'Win';
-            console.log('Win');
+            result =  'You Win!';
             playerWins++;
             console.log(playerWins);
+            console.log('Win');
         } else {
-            result = 'Lose';
-            console.log('L');
+            result = 'You Lose...';
             playerLoss++;
             console.log(playerLoss);
+            console.log('L');
         }
+        roundResult = result;
         updateScore();
         checkWin();
+    
     }
 
     function getComputerChoice() {
         let number = Math.floor(Math.random() * 3 + 1);
         if (number == 1) {
-            return 'rock';
+            computerChoice = 'rock';
+            return computerChoice;
         } if (number == 2) {
-            return 'paper'
+            computerChoice = 'paper';
+            return computerChoice;
         } else if (number == 3) {
-            return 'scissors'
+            computerChoice = 'scissors';
+            return computerChoice;
         }
     }
 
     function updateScore() {
         winCounter.textContent = `Wins: ${playerWins}`;
         lossCounter.textContent = `Losses: ${playerLoss}`;
+        winLoseTag.textContent = `${roundResult}`;
+        computerChose.textContent = `Computer chose ${computerChoice}`;
     }
 
     function checkWin() {
@@ -65,7 +76,6 @@
 
     // CHECKLIST
     // Display results of each round
-    // Display win/loss tally
     // Add a way to play again if you win or lose 5
     // Style these once complete
 
