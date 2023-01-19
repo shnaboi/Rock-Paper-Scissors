@@ -4,15 +4,17 @@
     let playerLoss = 0;
     let roundResult = '';
     let computerChoice = '';
+    let round = 0;
 
     let userRock = document.getElementById("rock");
     let userPaper = document.getElementById("paper");
     let userScissors = document.getElementById("scissors");
 
     const winCounter = document.getElementById('Wins');
-    const lossCounter = document.getElementById('Loss');
+    const lossCounter = document.getElementById('Losses');
     const winLoseTag = document.getElementById('winLoseTag');
     const computerChose = document.getElementById('computerChose');
+    const roundCounter = document.getElementById('roundCounter');
 
     userRock.addEventListener('click', () => getPlayerChoice('rock'));
     userPaper.addEventListener('click', () => getPlayerChoice('paper'));
@@ -28,6 +30,7 @@
     function playRound(playerC, computerC) {
         if (playerC === computerC) {
             result = 'Tie';
+            round++;
             console.log('Tie');
         } else if (
             playerC == "rock" && computerC == "scissors" || 
@@ -35,11 +38,13 @@
             playerC == "scissors" && computerC == "paper") {
             result =  'You Win!';
             playerWins++;
+            round++;
             console.log(playerWins);
             console.log('Win');
         } else {
             result = 'You Lose...';
             playerLoss++;
+            round++;
             console.log(playerLoss);
             console.log('L');
         }
@@ -68,6 +73,7 @@
         lossCounter.textContent = `Losses: ${playerLoss}`;
         winLoseTag.textContent = `${roundResult}`;
         computerChose.textContent = `Computer chose ${computerChoice}`;
+        roundCounter.textContent = `Round: ${round}`;
     }
 
     function checkWin() {
@@ -76,11 +82,11 @@
 
     // CHECKLIST
     // Display results of each round
-    // Add a way to play again if you win or lose 5
-    // Style these once complete
+    // Add a way to play again if you win or lose 10
+    // Add green check or red X after button clicks to help show win/loss
+    // CSS
 
     // FEATURES TO ADD
     // add round counter
     // add tie counter
-    // add alerts for if you lost or won
     // add streak counters (for if you lose, tie, or win 3+ in a row)

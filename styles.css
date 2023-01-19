@@ -20,7 +20,9 @@ body {
 
 button {
     border: 1px solid red;
-    font-size: 48px;
+    font-size: 36px;
+    width: 5em;
+    padding: .4em;
 }
 
 .score-section {
@@ -40,7 +42,7 @@ button {
 
 .killfeed {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
     text-align: center;
     border: 2px solid red;
@@ -50,8 +52,10 @@ button {
 
 .win-lose-tag {
     /* background-color: aliceblue; */
+    top: 0px;
     font-size: 2em;
     margin: 5% 0px;
+    background-color: rgba(0, 0, 0, .1);
 }
 
 .computer-chose {
