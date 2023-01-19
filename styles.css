@@ -39,20 +39,31 @@ button {
 }
 
 .killfeed {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    text-align: center;
     border: 2px solid red;
     height: 100%;
     width: 25%;
 }
 
-.killfeed {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    text-align: center;
+.win-lose-tag {
+    /* background-color: aliceblue; */
+    font-size: 2em;
+    margin: 5% 0px;
 }
 
-h2 {
-    font-size: 24px;
+.computer-chose {
+    /* background-color: coral; */
+    font-size: 1em;
+    margin: 5% 0px;
+}
+
+.win-loss-container {
+    /* background-color: blanchedalmond; */
+    font-size: 2em;
+    margin: 5% 0px;
 }
 
 .score-pc {
